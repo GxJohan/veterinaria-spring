@@ -12,6 +12,8 @@ public class Mascota {
     @Column(nullable = false)
     private String nombre;
 
+
+
     @Column(nullable = false)
     private String especie; // Perros, Gatos, Loros, Iguanas, Etc
 
