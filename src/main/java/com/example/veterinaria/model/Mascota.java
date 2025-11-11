@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class Mascota {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
@@ -21,21 +22,36 @@ public class Mascota {
     @Column(nullable = false)
     private Integer edad;
 
+    //Agregando nuevo req. peso
+    @Column(nullable = false)
+    private Double peso;
+
+
     // Constructor vacío
     public Mascota(){
     }
 
+
     // Constructor con parámetros
-    public Mascota(String nombre, String especie, String raza, Integer edad, Integer id) {
+    public Mascota(String nombre, String especie, String raza, Integer edad, Integer id, Double peso) {
         this.id = id;
         this.nombre = nombre;
         this.especie = especie;
         this.raza = raza;
         this.edad = edad;
+        this.peso = peso;
     }
 
     // Getters y Setters
 
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
 
     public Integer getId() {
         return id;
